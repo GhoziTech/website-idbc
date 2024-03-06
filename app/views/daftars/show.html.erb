@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @daftar %>
+
+<div>
+  <%= link_to "Edit this daftar", edit_daftar_path(@daftar) %> |
+  <%= link_to "Back to daftars", daftars_path %>
+
+  <%= button_to "Destroy this daftar", @daftar, method: :delete %>
+</div>

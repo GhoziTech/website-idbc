@@ -1,0 +1,2 @@
+module DaftarsHelper
+end

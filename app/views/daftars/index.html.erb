@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Daftars</h1>
+
+<div id="daftars">
+  <% @daftars.each do |daftar| %>
+    <%= render daftar %>
+    <p>
+      <%= link_to "Show this daftar", daftar %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New daftar", new_daftar_path %>
