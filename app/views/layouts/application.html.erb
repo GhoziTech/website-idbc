@@ -727,6 +727,30 @@
 
         <%= yield %>
 
+        <h3>Silahkan Login</h3>
+        <% if user_signed_in? %>
+          <%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete } %>
+          <%= link_to "Edit registration", edit_user_registration_path %>
+        <% elsif !admin_signed_in? %>
+          <%= link_to "Sign up", new_user_registration_path %>
+          <%= link_to "Sign in", new_user_session_path %>
+        <% end %>
+        <% if admin_signed_in? %>
+          <h3>Login Admin</h3>
+          <%= link_to "Sign out", destroy_admin_session_path, method: :delete, data: { turbo_method: :delete } %>
+          <%= link_to "Edit registration", edit_admin_registration_path %>
+        <% elsif !user_signed_in? %>
+          <h3>Login Admin</h3>
+          <%= link_to "Sign up", new_admin_registration_path %>
+          <%= link_to "Sign in", new_admin_session_path %>
+          <% end %>
+          
+          <h3>Page Links</h3>
+          <%= link_to "Users path", pages_users_path %>
+          <%= link_to "Admin path", pages_admin_path %>
+
+
+
         <!-- /END THE FEATURETTES -->
       </div>
     </div>

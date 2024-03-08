@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  devise_for :admin, controller: {
+    sessions: 'admin/sessions',
+    registrations: 'admin/registrations'
+  }
+
+  devise_for :users, controller: {
+    sessions: 'users/sessions'
+  }
+
+  get 'pages/users'
+  get 'pages/admin'
+
   resources :daftars
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
