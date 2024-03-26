@@ -19,6 +19,10 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.tailwindcss.com" defer></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
@@ -29,6 +33,8 @@
       rel="canonical"
       href="https://getbootstrap.com/docs/5.3/examples/carousel/"
     />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
     <link
       rel="stylesheet"
@@ -68,6 +74,9 @@
     />
     <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico" />
     <meta name="theme-color" content="#712cf9" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <style>
       /* GLOBAL STYLES
 -------------------------------------------------- */
@@ -79,8 +88,7 @@
         padding-top: 4.5rem;
         padding-bottom: 3rem;
         color: rgb(var(--bs-tertiary-color-rgb));
-        background-color: lightblue;
-      }
+        background-image: linear-gradient(to bottom right, #00C0FF, #4218B8);      }
 
       /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
@@ -117,6 +125,185 @@
       }
       /* rtl:end:ignore */
 
+      .row.featurette img {
+        filter: drop-shadow(-15px 5px 5px black);
+      }
+
+      .container-footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 300px;
+        width: 50%;
+        text-align: center;
+        align-items: center;
+        margin: auto;
+      }
+      #whatsapp,
+      #instagram,
+      #youtube,
+      #facebook {
+        font-size: 5em;
+        background-color: #18191f;
+        color: #fff;
+        box-shadow: 2px 2px 2px #00000080, 10px 1px 12px #00000080,
+          2px 2px 10px #00000080, 2px 2px 3px #00000080, inset 2px 2px 10px #00000080,
+          inset 2px 2px 10px #00000080, inset 2px 2px 10px #00000080,
+          inset 2px 2px 10px #00000080;
+        border-radius: 29px;
+        padding: 11px 14px;
+        margin: 0 30px;
+        animation: animate 3s linear infinite;
+        text-shadow: 0 0 50px #0072ff, 0 0 100px #0072ff, 0 0 150px #0072ff,
+          0 0 200px #0072ff;
+      }
+      #instagram {
+        animation-delay: 0.3s;
+      }
+      #facebook {
+        animation-delay: 0.7s;
+      }
+      #youtube {
+        animation-delay: 0.1s;
+      }
+
+      @keyframes animate {
+        from {
+          filter: hue-rotate(0deg);
+        }
+        to {
+          filter: hue-rotate(360deg);
+        }
+      }
+
+      .container-partial {
+        position: relative;
+        width: 1150px;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .container-partial .card-partial {
+        position: relative;
+        width: 300px;
+        height: 420px;
+        background-color: #fff;
+        margin: 20px;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, .2);
+        transition: .5s ease-in-out;
+      }
+
+      .container-partial:hover .card-partial {
+        filter: blur(20px);
+        transform: scale(.9);
+        opacity: .5;
+      }
+
+      .container-partial .card-partial:hover {
+        filter: blur(0);
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      .container-partial .card-partial:hover .circle {
+        clip-path: circle(600px);
+      }
+
+      .container-partial .card-partial:hover .content p {
+        color: #fff;
+      }
+
+      .container-partial .card-partial:hover .content a {
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .2),
+                    -1px -1px 2px rgba(255, 255, 255, .4);
+      }
+
+      .container-partial .card-partial .content a:active {
+        box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .1),
+                    inset 5px 5px 5px rgba(0, 0, 0, .04),
+                    inset -5px -5px 5px rgba(255, 255, 255, .07),
+                    inset -1px -1px 2px rgba(255, 255, 255, .4);
+      }
+
+      .container-partial .card-partial .circle {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        clip-path: circle(180px at center 0);
+        text-align: center;
+        transition: 1s ease-in-out;
+      }
+
+      .container-partial .card-partial h2 {
+        color: #fff;
+        font-size: 4.5em;
+        padding: 30px 0;
+      }
+
+      .container-partial .card-partial .content {
+        position: absolute;
+        bottom: 10px;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .container-partial .card-partial .content p {
+        color: #666;
+        transition: .5s ease-in-out;
+      }
+
+      .container-partial .card-partial .content a {
+        position: relative;
+        display: inline-block;
+        padding: 10px 20px;
+        background: #000;
+        color: #fff;
+        border-radius: 40px;
+        text-decoration: none;
+        margin-top: 20px;
+        transition: .8s ease-in-out;
+      }
+
+      .container-partial .card-partial:nth-child(1) .circle,
+      .container-partial .card-partial:nth-child(1) .content a {
+        background: #ffaf00;
+      }
+
+      .container-partial .card-partial:nth-child(2) .circle,
+      .container-partial .card-partial:nth-child(2) .content a {
+        background: #da2268;
+      }
+
+      .container-partial .card-partial:nth-child(3) .circle,
+      .container-partial .card-partial:nth-child(3) .content a {
+        background: #bb02ff;
+      }
+
+      @keyframes colorChange {
+        0% {
+          color: #fff;
+        }
+
+        50% {
+          color: #b1b493;
+        }
+
+        80% {
+          color: #4f8a8b;
+        }
+
+        100% {
+          color: #fff;
+        }
+      }
+
+      
 
       /* Featurettes
 ------------------------- */
@@ -131,10 +318,1022 @@
         letter-spacing: -0.05rem;
       }
 
-      /* rtl:end:remove */
+    ul {
+      list-style: none;
+    }
+    .main {
+      max-width: 75rem;
+      padding: 3em 1.5em;
+    }
+
+    .main__heading {
+      font-weight: 600;
+      font-size: 2.25em;
+      margin-bottom: 0.75em;
+      text-align: center;
+      color: #eceff1;
+    }
+
+    .cards {
+      position: relative;
+    }
+
+    .cards__inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5em;
+    }
+
+    .card {
+      --flow-space: 0.5em;
+      --hsl: var(--hue), var(--saturation), var(--lightness);
+      flex: 1 1 14rem;
+      padding: 1.5em 2em;
+      display: grid;
+      grid-template-rows: auto auto auto 1fr;
+      align-items: start;
+      gap: 1.25em;
+      color: #eceff1;
+      background-color: #2b2b2b;
+      border: 1px solid #eceff133;
+      border-radius: 15px;
+    }
+
+    .card:nth-child(1) {
+      --hue: 165;
+      --saturation: 82.26%;
+      --lightness: 51.37%;
+    }
+
+    .card:nth-child(2) {
+      --hue: 291.34;
+      --saturation: 95.9%;
+      --lightness: 61.76%;
+    }
+
+    .card:nth-child(3) {
+      --hue: 338.69;
+      --saturation: 100%;
+      --lightness: 48.04%;
+    }
+
+    .card__bullets {
+      line-height: 1.4;
+    }
+
+    .card__bullets li::before {
+      display: inline-block;
+      content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' width='16' title='check' fill='%23dddddd'%3E%3Cpath d='M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z' /%3E%3C/svg%3E");
+      transform: translatey(0.25ch);
+      margin-right: 1ch;
+    }
+
+    .card__heading {
+      font-size: 1.05em;
+      font-weight: 600;
+    }
+
+    .card__price {
+      font-size: 1.75em;
+      font-weight: 700;
+    }
+
+    .flow > * + * {
+      margin-top: var(--flow-space, 1.25em);
+    }
+
+    .cta {
+      display: block;
+      align-self: end;
+      margin: 1em 0 0.5em 0;
+      text-align: center;
+      text-decoration: none;
+      color: #fff;
+      background-color: #0d0d0d;
+      padding: 0.7em;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      user-select: none;
+      opacity: var(--opacity, 0);
+      -webkit-mask: radial-gradient(
+        25rem 25rem at var(--x) var(--y),
+        #000 1%,
+        transparent 50%
+      );
+      mask: radial-gradient(
+        25rem 25rem at var(--x) var(--y),
+        #000 1%,
+        transparent 50%
+      );
+      transition: 400ms mask ease;
+      will-change: mask;
+    }
+
+    .overlay .card {
+      background-color: hsla(var(--hsl), 0.15);
+      border-color: hsla(var(--hsl), 1);
+      box-shadow: 0 0 0 1px inset hsl(var(--hsl));
+    }
+
+    .overlay .cta {
+      display: block;
+      grid-row: -1;
+      width: 100%;
+      background-color: hsl(var(--hsl));
+      box-shadow: 0 0 0 1px hsl(var(--hsl));
+    }
+
+    :not(.overlay) > .card {
+      transition: 400ms background ease;
+      will-change: background;
+    }
+
+    :not(.overlay) > .card:hover {
+      --lightness: 90%;
+      background: hsla(var(--hsl), .5);
+      color: #2b2b2b;
+    }
+
+    .wrapper {
+      height: 300px;
+      width: 100%;
+    }
+
+    .btn-group {
+      padding: 1.2rem;
+      width: 100%;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      margin-top: 15px;
+    }
+
+    .wrapper button {
+      position: absolute;
+      width: 130px;
+      height: inherit;
+      font-size: 1.2em;
+      color: black;
+      font-weight: 600;
+      border-radius: 30px;
+      border: 2px solid #e1dce7;
+      outline: none;
+      cursor: pointer;
+      box-shadow: 2px 4px rgba(0, 0, 0, 3);
+    }
+
+    /* Card Glowing Start */
+/******************************/
+        @font-face {
+          font-family: "Inter";
+          src: url("https://res.cloudinary.com/du6mfjbbd/raw/upload/v1696975586/wegxkv6mdriebvpvokwf.woff2") format("woff2");
+          font-weight: normal;
+          font-style: normal;
+        }
+        :root {
+          --text-color: #a1a1a1;
+          --accent-color: #111;
+          --geist-foreground-rgb: 255, 255, 255;
+          --border-radius: 12px;
+        }
+      .gradient-text-animation {
+        --colorA: #D6009A;
+        --colorB: #9750dd;
+        cursor: default;
+        position: relative;
+        background-image: linear-gradient(120deg, var(--colorA) 0%, var(--colorB) 50%, var(--colorA) 100%);
+        background-origin: padding-box;
+        background-size: 200%;
+        -webkit-box-decoration-break: clone;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: unset;
+        animation-timeline: auto;
+        animation-range-start: normal;
+        animation-range-end: normal;
+        overflow: visible;
+        animation: 3s linear 0s infinite normal forwards running nextui-k-dAFEPd;
+      }
+
+      @keyframes nextui-k-dAFEPd {
+        100% {
+          background-position: -200% center;
+        }
+      }
+      /******************************/
+      .gradient-border-card {
+        position: relative;
+        padding: 40px;
+        border-radius: var(--border-radius);
+        flex: 1 1;
+        transition: background 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        box-shadow: 0 0 0 1px transparent, 0 2px 4px transparent, 0 12px 24px transparent;
+        cursor: pointer;
+        height: 100%;
+        z-index: 1;
+      }
+      @keyframes shimmer {
+        0% {
+          opacity: 0;
+        }
+        5% {
+          opacity: 0;
+          background-position: -50%;
+        }
+        10% {
+          opacity: 0.7;
+        }
+        15% {
+          opacity: 0;
+          background-position: 150%;
+        }
+        20% {
+          opacity: 0;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+      .gradient-border-card .shimmer {
+        background: linear-gradient(112deg, transparent 30%, rgba(var(--geist-foreground-rgb), 0.1) 40%, rgba(var(--geist-foreground-rgb), 0.3) 50%, rgba(var(--geist-foreground-rgb), 0.1) 60%, transparent 80%);
+        position: absolute;
+        inset: 0;
+        z-index: 20;
+        pointer-events: none;
+        border-radius: inherit;
+        background-size: 200% auto;
+        background-position: 0;
+        animation: shimmer 18s cubic-bezier(0.8, 0, 0.05, 1) infinite;
+        animation-delay: var(--delay);
+      }
+      .gradient-border-card i {
+        content: "";
+        position: absolute;
+        inset: -1px;
+        padding: var(--border-size);
+        --border-size: 1px;
+        --padding: 1px;
+        --border-bg: conic-gradient(from 180deg at 50% 50%,#e92a67 0deg,#a853ba 112.5deg,#2a8af6 228.75deg,rgba(42,138,246,0) 360deg);
+        overflow: hidden;
+        padding: calc(var(--padding) + var(--border-size));
+        border-radius: var(--border-radius);
+        display: inline-block;
+        z-index: 0;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        perspective: 1000;
+        transform: translateZ(0);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        z-index: -1;
+        border-radius: calc(var(--border-radius) + var(--border-size));
+      }
+      .gradient-border-card i:before {
+        content: "";
+        display: block;
+        background: var(--border-bg);
+        box-shadow: 0 0 40px 20px --var(--border-bg);
+        width: calc(100% * 1.41421356237);
+        padding-bottom: calc(100% * 1.41421356237);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 100%;
+        z-index: -2;
+        animation: landing_spin__XlUIM 5s linear infinite;
+      }
+      @keyframes landing_spin__XlUIM {
+        0% {
+          transform: translate(-50%, -50%) rotate(1turn);
+        }
+        to {
+          transform: translate(-50%, -50%) rotate(0);
+        }
+      }
+      .gradient-border-card .icon {
+        position: relative;
+        display: inline-flex;
+        padding: 0.75rem;
+        border-radius: inherit;
+      }
+      .gradient-border-card p {
+        color: var(--text-color);
+      }
+      .gradient-border-card:before, .gradient-border-card .icon:before {
+        content: "";
+        position: absolute;
+        inset: -1px;
+        border-radius: inherit;
+        padding: 1px;
+        background: radial-gradient(75% 75% at 25% 15%, #fff 0, rgba(255, 255, 255, 0.3) 100%);
+        -webkit-mask: linear-gradient(#000, #000) content-box, linear-gradient(#000, #000);
+        mask: linear-gradient(#000, #000) content-box, linear-gradient(#000, #000);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0.5;
+        pointer-events: none;
+      }
+      .gradient-border-card:hover {
+        background: var(--accent-color);
+        color: #9750dd;
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.03), 0 2px 4px rgba(0, 0, 0, 0.05), 0 12px 24px rgba(0, 0, 0, 0.05);
+      }
+
+
+      .gradient-border-card:hover .favorite-container svg {
+        transform: translate(var(--ending-position-x), var(--ending-position-y)) scale(var(--ending-scale)) !important;
+        transition: transform 0.1s ease-out 0;
+      }
+
+      .favorite-container {
+        position: relative;
+      }
+
+      .favorite-container .sparkles-container {
+        height: 24px;
+        width: 24px;
+        display: block;
+        position: absolute;
+        top: -2px;
+        left: -3px;
+      }
+
+      .highlight-bg {
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        bottom: 1px;
+        left: 1px;
+        background: inherit;
+        border-radius: 12px;
+        background: linear-gradient(-90deg, #007cf0, #00dfd8, #ff0080, #007cf0);
+        background-size: 400% 100%;
+        border: none;
+        padding: 0;
+        margin: 0;
+        animation: background-anim 8s ease-in-out infinite;
+      }
+
+      .button-text {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .highlight-bg:after {
+        content: "";
+        position: absolute;
+        background-size: inherit;
+        background-image: inherit;
+        animation: inherit;
+        left: 0;
+        right: 0;
+        top: 2px;
+        height: 100%;
+        filter: blur(0.5rem);
+        transition: 0.25s;
+      }
+
+      @keyframes background-anim {
+        50% {
+          background-position: 140% 50%;
+          transform: skew(-2deg);
+        }
+      }
+      /*****************/
+      .gradient-background__wrapper {
+        background: #141414;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+
+      @media (max-width: 568px) {
+        .gradient-background__wrapper {
+          background: #FFFFFF;
+        }
+      }
+      .gradient-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-filter: blur(250px);
+        filter: blur(250px);
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+      }
+
+      @media (max-width: 568px) {
+        .gradient-background {
+          display: none;
+        }
+      }
+      .gradient-background__shape {
+        mix-blend-mode: lighten;
+        -webkit-animation-duration: 20s;
+        animation-duration: 20s;
+        position: absolute;
+        border-radius: 100%;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        -webkit-animation-timing-function: cubic-bezier(0.1, 0, 0.9, 1);
+        animation-timing-function: cubic-bezier(0.1, 0, 0.9, 1);
+      }
+
+      .gradient-background__shape--1 {
+        bottom: 0;
+        left: 0;
+        width: 700px;
+        height: 700px;
+        background: #4f4f4f;
+        mix-blend-mode: lighten;
+        -webkit-transform: translate(-30%, 40%);
+        transform: translate(-30%, 40%);
+        -webkit-animation-name: gradientShapeAnimation1;
+        animation-name: gradientShapeAnimation1;
+      }
+
+      .gradient-background__shape--2 {
+        top: 0;
+        right: 0;
+        width: 600px;
+        height: 600px;
+        background: #010030;
+        -webkit-transform: translate(20%, -40%);
+        transform: translate(20%, -40%);
+        -webkit-animation-name: gradientShapeAnimation2;
+        animation-name: gradientShapeAnimation2;
+      }
+
+      @keyframes gradientShapeAnimation1 {
+        0% {
+          -webkit-transform: translate(-30%, 40%) rotate(-20deg);
+          transform: translate(-30%, 40%) rotate(-20deg);
+        }
+        25% {
+          -webkit-transform: translate(0%, 20%) skew(-15deg, -15deg) rotate(80deg);
+          transform: translate(0%, 20%) skew(-15deg, -15deg) rotate(80deg);
+        }
+        50% {
+          -webkit-transform: translate(30%, -10%) rotate(180deg);
+          transform: translate(30%, -10%) rotate(180deg);
+        }
+        75% {
+          -webkit-transform: translate(-30%, 40%) skew(15deg, 15deg) rotate(240deg);
+          transform: translate(-30%, 40%) skew(15deg, 15deg) rotate(240deg);
+        }
+        100% {
+          -webkit-transform: translate(-30%, 40%) rotate(-20deg);
+          transform: translate(-30%, 40%) rotate(-20deg);
+        }
+      }
+      @keyframes gradientShapeAnimation2 {
+        0% {
+          -webkit-transform: translate(20%, -40%) rotate(-20deg);
+          transform: translate(20%, -40%) rotate(-20deg);
+        }
+        20% {
+          -webkit-transform: translate(0%, 0%) skew(-15deg, -15deg) rotate(80deg);
+          transform: translate(0%, 0%) skew(-15deg, -15deg) rotate(80deg);
+        }
+        40% {
+          -webkit-transform: translate(-40%, 50%) rotate(180deg);
+          transform: translate(-40%, 50%) rotate(180deg);
+        }
+        60% {
+          -webkit-transform: translate(-20%, -20%) skew(15deg, 15deg) rotate(80deg);
+          transform: translate(-20%, -20%) skew(15deg, 15deg) rotate(80deg);
+        }
+        80% {
+          -webkit-transform: translate(10%, -30%) rotate(180deg);
+          transform: translate(10%, -30%) rotate(180deg);
+        }
+        100% {
+          -webkit-transform: translate(20%, -40%) rotate(340deg);
+          transform: translate(20%, -40%) rotate(340deg);
+        }
+      }
+      .gradient-background__noise {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("https://res.cloudinary.com/du6mfjbbd/image/upload/v1701127786/qzt2rn0jkkdln3y1e3mp.png");
+        background-size: 100px;
+      }
+
+      @media (max-width: 568px) {
+        .gradient-background__noise {
+          display: none;
+        }
+      }
+      @media (prefers-reduced-motion) {
+        .gradient-background__shape--1 {
+          -webkit-animation-name: none;
+          animation-name: none;
+        }
+
+        .gradient-background__shape--2 {
+          -webkit-animation-name: none;
+          animation-name: none;
+        }
+      }
+      @-moz-document url-prefix() {
+        .gradient-background__wrapper {
+          background-image: url("https://res.cloudinary.com/du6mfjbbd/image/upload/v1701127843/gradient-background-c1d8cb3f0925910cfff2493c4442d4e2c1cb6b8a267903342574faee6f70c26c_zuhomc.png");
+          background-size: cover;
+        }
+
+        @media (max-width: 568px) {
+          .gradient-background__wrapper {
+            background: #FFFFFF;
+          }
+        }
+        .gradient-background,
+      .gradient-background__noise {
+          display: none;
+        }
+      }
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        .gradient-background__wrapper {
+          background-image: url("https://res.cloudinary.com/du6mfjbbd/image/upload/v1701127843/gradient-background-c1d8cb3f0925910cfff2493c4442d4e2c1cb6b8a267903342574faee6f70c26c_zuhomc.png");
+          background-size: cover;
+        }
+      }
+      @media all and (-ms-high-contrast: none) and (max-width: 568px), (-ms-high-contrast: active) and (max-width: 568px) {
+        .gradient-background__wrapper {
+          background: #FFFFFF;
+        }
+      }
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        .gradient-background,
+      .gradient-background__noise {
+          display: none;
+        }
+      }
+      /*****************************/
+      .glowing-wrapper-button {
+        z-index: 1;
+        color: #fff;
+        letter-spacing: -0.01em;
+        background-color: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 62.5rem;
+        padding: 0.7rem 1.5rem;
+        font-size: 0.88rem;
+        line-height: 1.42;
+        text-decoration: none;
+        position: relative;
+        max-width: 100%;
+        display: inline-block;
+      }
+
+      .glowing-wrapper {
+        border-radius: 62.5rem;
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .glowing-wrapper.glowing-wrapper-active {
+        background-color: #000;
+      }
+
+      .glowing-wrapper-borders-masker {
+        width: 100%;
+        opacity: 0;
+        border-radius: 62.5rem;
+        padding: 0.11rem;
+        line-height: 100%;
+        transition: opacity 1s;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .glowing-wrapper .button-text {
+        z-index: 2;
+        color: #fff;
+        position: relative;
+      }
+
+      .glowing-wrapper-animations {
+        width: 100%;
+        opacity: 0;
+        transition: opacity 1s;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .glowing-wrapper-mask {
+        opacity: 1;
+      }
+
+      .glowing-wrapper-glow {
+        opacity: 0.12;
+        filter: blur(8px);
+      }
+
+      .glowing-wrapper-borders {
+        width: 100%;
+        opacity: 1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .glowing-wrapper-mask-wrapper {
+        opacity: 1;
+      }
+
+      .glowing-wrapper-button:after {
+        background: radial-gradient(85% 120% at 50% 120%, rgba(255, 255, 255, 0.24) 0%, rgba(255, 255, 255, 0) 100%);
+        border-radius: 999px;
+        content: "";
+        height: calc(100% + 4px);
+        left: -2px;
+        opacity: 0;
+        position: absolute;
+        top: -2px;
+        transition: 1s all;
+        width: calc(100% + 4px);
+      }
+
+      .glowing-wrapper-button:hover:after {
+        opacity: 0.7;
+      }
+
+      .glowing-wrapper-active .glowing-wrapper-animations,
+      .glowing-wrapper-active .glowing-wrapper-borders-masker {
+        opacity: 1;
+      }
+
+      .glowing-wrapper-animations:before,
+      .glowing-wrapper-borders:before {
+        content: "";
+        float: left;
+        padding-top: 100%;
+      }
+
+      .glowing-wrapper-animations:after,
+      .glowing-wrapper-borders:after {
+        clear: both;
+        content: "";
+        display: block;
+      }
+
+      .glowing-wrapper-animations {
+        pointer-events: none;
+      }
+
+      .glowing-wrapper-animations * {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+
+      .glowing-wrapper-borders,
+      .glowing-wrapper-glow,
+      .glowing-wrapper-mask {
+        animation: borderTurn 2.5s infinite linear;
+        background-image: conic-gradient(from 0 at 50% 50%, rgba(255, 255, 255, 0.5) 0deg, rgba(255, 255, 255, 0) 60deg, rgba(255, 255, 255, 0) 310deg, rgba(255, 255, 255, 0.5) 360deg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .glowing-wrapper-mask-wrapper {
+        -webkit-mask: url("data:image/svg+xml,url('data:image/svg+xml,%253Csvg width='28' height='24' viewBox='0 0 28 24' fill='none' xmlns='http://www.w3.org/2000/svg'%253E%253Crect width='28' height='24' fill='black'/%253E%253C/svg%253E%250A');");
+        mask: url("data:image/svg+xml,url('data:image/svg+xml,%253Csvg width='28' height='24' viewBox='0 0 28 24' fill='none' xmlns='http://www.w3.org/2000/svg'%253E%253Crect width='28' height='24' fill='black'/%253E%253C/svg%253E%250A');");
+        mask-repeat: repeat;
+        -webkit-mask-size: auto;
+        mask-size: auto;
+      }
+
+      .glowing-wrapper-borders {
+        animation-name: borderTurnWithTranslate;
+      }
+
+      .glowing-wrapper-borders-masker {
+        content: "";
+        inset: 0;
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask-composite: xor;
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+      }
+
+      @keyframes borderTurn {
+        0% {
+          transform: rotate(0);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes borderTurnWithTranslate {
+        0% {
+          transform: translate(-50%, -50%) rotate(0);
+        }
+        to {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
+      .close-button {
+        background: transparent;
+        border-radius: 50%;
+        animation: animate 3s linear infinite;
+      }
+
+      @keyframes animate {
+        0% {
+          box-shadow: 0 0 0 0 rgba(48, 0, 117, 0.7), 0 0 0 0 rgba(48, 0, 117, 0.7);
+        }
+        40% {
+          box-shadow: 0 0 0 20px rgba(48, 0, 117, 0), 0 0 0 0 rgba(48, 0, 117, 0.7);
+        }
+        80% {
+          box-shadow: 0 0 0 20px rgba(48, 0, 117, 0), 0 0 0 30px rgba(48, 0, 117, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(48, 0, 117, 0), 0 0 0 30px rgba(48, 0, 117, 0);
+        }
+      }
+      /****************/
+      @keyframes hueRotate {
+        0% {
+          filter: hue-rotate(0) blur(30px);
+        }
+        100% {
+          filter: hue-rotate(360deg) blur(30px);
+        }
+      }
+      .gradient-line:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -75px;
+        height: 75px;
+        filter: blur(30px);
+        -webkit-filter: blur(30px);
+        background-image: conic-gradient(from 180deg at 50% 100%, transparent 0, transparent 27%, #ff3998 27%, #d764ff 36.04%, #00b5ff 58.23%, #0fd 63%, #54fa43 73%, transparent 73%, transparent 100%);
+        animation: hueRotate 2.5s linear infinite;
+      }
+
+      /**************************/
+      .sf__mask {
+        on: center;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+      }
+
+      .sf-social-item:before {
+        background-color: rgba(255, 255, 255, 0.075);
+        content: "";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        transform: scaleY(0);
+        transform-origin: bottom;
+        transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+        width: 100%;
+      }
+
+      .sf-social-item:hover:before {
+        transform: scaleY(1);
+      }
+
+      .sf-social-item:hover .sf-social-item__icon {
+        animation: socialicon 0.75s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+      }
+
+      .sf-purple-mark {
+        animation: shape 20s linear infinite;
+        height: 5.3rem;
+        width: 5.3rem;
+      }
+
+      .sf-purple-mark.--2 {
+        animation-direction: reverse;
+      }
+
+      .sf-ring {
+        border: 0;
+        outline: 0;
+      }
+
+      .sf-ring.--1, .sf-ring.--2 {
+        animation: shape 100s linear infinite;
+      }
+
+      .sf-ring.--2 {
+        animation-direction: reverse;
+      }
+
+      .sf-ring.--3, .sf-ring.--4 {
+        animation: shape 100s linear infinite;
+      }
+
+      .sf-ring.--4 {
+        animation-direction: reverse;
+      }
+
+      @keyframes socialicon {
+        0% {
+          opacity: 1;
+          transform: translate(0);
+        }
+        25% {
+          opacity: 0;
+          transform: translate(0);
+        }
+        50% {
+          opacity: 0;
+          transform: translate(-100%, 100%);
+        }
+        to {
+          opacity: 1;
+          transform: translate(0);
+        }
+      }
+      .nl input[data-v-5a04fd2e] {
+        border: 1px solid #ff00fe;
+      }
+
+      @media (min-width: 650px) {
+        .nl input[data-v-5a04fd2e] {
+          border-right: 0;
+        }
+      }
+      @keyframes shape {
+        0% {
+          transform: rotate(0);
+        }
+        to {
+          transform: rotate(1turn);
+        }
+      }
+      /****************/
+      .spacer {
+        padding-top: 300px;
+      }
+
+      .tds-layout.dx-fixed-background__layout {
+        -webkit-padding-end: 10px;
+        -webkit-padding-start: 10px;
+        grid-template-areas: "main main";
+        grid-template-columns: repeat(2, 1fr);
+        padding-inline-end: 10px;
+        padding-inline-start: 10px;
+      }
+
+      .dx-fixed-background {
+        --dx-fixed-bg-section-height: 200vh;
+      }
+
+      .dx-fixed-background__container {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        height: var(--dx-fixed-bg-section-height);
+        justify-content: center;
+        overflow: clip;
+        position: relative;
+      }
+
+      .dx-fixed-background__media {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        height: 100vh;
+        margin-top: -100vh;
+        overflow: hidden;
+        position: sticky;
+        top: 0;
+      }
+
+      .dx-fixed-background__media-asset {
+        height: 100vh;
+        -o-object-fit: cover;
+        object-fit: cover;
+        width: 100%;
+      }
+
+      .tds-theme--replicant-v2 [class*=tds-clip-] {
+        --clip-size: 20px;
+        --top-left-normal: 0 0;
+        --top-left-clip: 0 var(--clip-size),var(--clip-size) 0;
+        --top-right-normal: 100% 0;
+        --top-right-clip: calc(100% - var(--clip-size)) 0,100% var(--clip-size);
+        --bottom-right-normal: 100% 100%;
+        --bottom-right-clip: 100% calc(100% - var(--clip-size)),calc(100% - var(--clip-size)) 100%;
+        --bottom-left-normal: 0 100%;
+        --bottom-left-clip: var(--clip-size) 100%,0 calc(100% - var(--clip-size));
+        --clip: polygon(var(--top-left,var(--top-left-normal)),var(--top-right,var(--top-right-normal)),var(--bottom-right,var(--bottom-right-normal)),var(--bottom-left,var(--bottom-left-normal)));
+        -webkit-clip-path: var(--clip);
+        clip-path: var(--clip);
+      }
+
+      .tds-theme--replicant-opaque-bg {
+        -webkit-backdrop-filter: blur(var(--tds-blur--small));
+        backdrop-filter: blur(var(--tds-blur--small));
+        background: none;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+      }
+
+      .dx-fixed-background {
+        --dx-fixed-bg-section-height: 200vh;
+      }
+
+      .dx-fixed-background__media-wrapper {
+        height: var(--dx-fixed-bg-section-height);
+        inset-inline-start: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        transform: scale(1);
+        border-radius: 0;
+      }
+
+      .dx-fixed-background .dx-fixed-wrapper {
+        padding: 24px;
+        background: #fff;
+        position: relative;
+      }
+
+      /****************************/
+
+
+
+      ::-webkit-scrollbar {
+        width: 5px;
+        background-color: transparent; 
+      }
+
+
+      ::-webkit-scrollbar-thumb {
+        background-color: #5a23c8; 
+        border-radius: 5px; 
+      }
+
+      ::-webkit-scrollbar-track {
+        background-color: transparent; 
+      }
+
+    /* Card Glowing End*/
 
       /* RESPONSIVE CSS
 -------------------------------------------------- */
+      @media only screen and (max-width: 992px) {
+        /* Add responsive styles for max-width 992px */
+      }
+
+      @media only screen and (max-width: 768px) {
+        /* Add responsive styles for max-width 768px */
+      }
 
       @media (min-width: 40em) {
         /* Bump up size of carousel content */
@@ -268,102 +1467,6 @@
     </svg>
 
     <header data-bs-theme="light">
-      <!-- <nav
-        class="navbar navbar-expand-lg fixed-top navbar-dark bg-body-secondary"
-        aria-label="Main navigation"
-      >
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img src="/logo.png" alt="Bootstrap" width="50" height="44" />
-          </a>
-
-          <button
-            class="navbar-toggler p-0 border-0"
-            type="button"
-            id="navbarSideCollapse"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div
-            class="navbar-collapse offcanvas-collapse"
-            id="navbarsExampleDefault"
-          >
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#"
-                  >BERANDA</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">TENTANG IDBC</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                  >PENDIDIKAN</a
-                >
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">KONSEP PENDIDIKAN</a></li>
-                  <li>
-                    <a class="dropdown-item" href="#">KURIKULUM</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">SEJARAH</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">DAI</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">FASILITAS</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">BERITA</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">GALLERY</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                  >PENDAFTARAN</a
-                >
-                <ul class="dropdown-menu">
-                  <li>
-                    <a class="dropdown-item" href="#">Info Pendaftaran</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">Alur Pendaftaran</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">Formulir</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button class="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
-          </div>
-        </div>
-      </nav> -->
 
       <nav id="navbar-example2" class="navbar navbar-expand-lg fixed-top navbar-dark bg-body-secondary">
         <a class="navbar-brand mx-2 p-1" href="myidbc.net">
@@ -388,19 +1491,16 @@
           <li class="nav-item">
             <a class="nav-link" href="#scrollspyHeading5">Persyaratan</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#scrollspyHeading6">Biaya Pendidikan</a>
-          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Pendaftaran</a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#scrollspyHeading7">Alur Pendaftaran</a></li>
+              <li><a class="dropdown-item" href="#scrollspyHeading6">Alur Pendaftaran</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#scrollspyHeading8">Daftar Sekarang</a></li>
+              <li><a class="dropdown-item" href="#scrollspyHeading7">Daftar Sekarang</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#scrollspyHeading9">Kontak Kami</a>
+            <a class="nav-link" href="#scrollspyHeading8">Kontak Kami</a>
           </li>
         </ul>
       </nav>
@@ -413,47 +1513,13 @@
       <!-- Marketing messaging and featurettes
         ================================================== -->
       <!-- Wrap the rest of the page in another container to center all the content. -->
-      <h4 id="scrollspyHeading1"></h4>
       <div class="container marketing" style="width: 100%;">
+       
         <!-- Three columns of text below the carousel -->
-        <div
-          id="myCarousel"
-          class="carousel slide mb-6"
-          data-bs-ride="carousel"
-        >
-          <div class="carousel-indicators">
-            <button
-              type="button"
-              data-bs-target="#myCarousel"
-              data-bs-slide-to="0"
-              class="active"
-              aria-current="true"
-              aria-label="Slide 1"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#myCarousel"
-              data-bs-slide-to="1"
-              aria-label="Slide 2"
-            ></button>
-          </div>
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img
-                class="bd-placeholder-img"
-                width="100%"
-                style="background-size: cover;"
-                src="/banner1.png"
-                aria-hidden="true"
-                preserveAspectRatio="xMidYMid slice"
-                focusable="false"
-              >
-                <rect
-                  width="100%"
-                  height="100%"
-                  fill="var(--bs-secondary-color)"
-                />
-              </img>
+              <img src="/banner1.png" class="d-block w-100" alt="idbc putra">
               <div class="container">
                 <div class="carousel-caption text-end text" style="color: black;">
                     <a class="btn btn-lg btn-primary" href="#">Daftar</a>
@@ -461,67 +1527,62 @@
               </div>
             </div>
             <div class="carousel-item">
-              <img
-                class="bd-placeholder-img"
-                width="100%"
-                style="contain: content;"
-                src="/banner3.png"
-                aria-hidden="true"
-                preserveAspectRatio="xMidYMid slice"
-                focusable="false"
-              >
-                <rect
-                  width="100%"
-                  height="100%"
-                  fill="var(--bs-secondary-color)"
-                />
-              </img>
+              <img src="/banner3.png" class="d-block w-100" alt="idbc putri">
               <div class="container">
-                <div class="carousel-caption text-start" style="color: black;">
-                  <h1>PENERIMAAN MAHASANTRI <br> PUTRI BARU IDBC ANGKATAN VI 2025/2026</h1>
-                  <p>
-                    Some representative placeholder content for the third slide
-                    of this carousel.
-                  </p>
-                  <p>
-                    <a class="btn btn-lg btn-primary" href="#"
-                      >Browse gallery</a
-                    >
-                  </p>
+                <div class="carousel-caption text-end text" style="color: black;">
+                    <a class="btn btn-lg btn-primary float-start" href="#">Daftar</a>
                 </div>
               </div>
             </div>
           </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#myCarousel"
-            data-bs-slide="prev"
-          >
+          <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
           </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#myCarousel"
-            data-bs-slide="next"
-          >
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
         </div>
+        
+        <h4 id="scrollspyHeading1"></h4>
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading fw-normal lh-1">
+              USTADZ
+              <span class="text-body-secondary">JUNAEDY ALFAN</span>
+            </h2>
+            <p class="lead">
+              “IDBC (Islamic Digital Boarding College) telah menjawab kegalauan saya selama lebih dari 20 tahun untuk proyeksi model pendidikan abad 21, sebagai KAMPUS ADAB & IT untuk melahirkan generasi DA’I TECHNO PRENEUR”
+            </p>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <img
+            class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+            width="500"
+              height="500"
+              src="/tentang.png"
+              role="img"
+              aria-label="Placeholder: 500x500"
+              preserveAspectRatio="xMidYMid slice"
+              focusable="false"
+              >
+              <title>Placeholder</title>
+              <rect width="100%" height="100%" fill="var(--bs-secondary-bg)" />
+              <text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">
+
+              </text>
+            </img>
+          </div>
+        </div>
 
         <h4 id="scrollspyHeading2"></h4>
-
-        <!-- /.row -->
         <div class="row featurette">
           <div class="col-md-7">
             <h2 class="featurette-heading fw-normal lh-1">
               Mengapa Study 
               <span class="text-body-secondary">Di IDBC?</span>
             </h2>
-            <hr>
             <p class="lead">
               1. Garansi kompetensi skill IT & adab yang tinggi pada setiap lulusan. <br>
               2. Tenaga pengajar praktisi dan ahli (expert) dibidangnya. <br>
@@ -555,197 +1616,223 @@
         <!-- START THE FEATURETTES -->
         <hr class="featurette-divider" />
         <h4 id="scrollspyHeading3"></h4>
+
+        <main class="main flow">
+          <h1 class="main__heading">Program Nasional</h1>
+          <div class="main__cards cards">
+            <div class="cards__inner">
+              <div class="cards__card card">
+                <h2 class="card__heading">Skill Dasar</h2>
+                <p class="card__price">250.000</p>
+                <ul role="list" class="card__bullets flow">
+                  <li> Mempelajari Adab & Ilmu Fardhu Ain (Aqidah, Fikih, dll)</li>
+                  <li>Mempelajari Tehnik Komputer & Jaringan</li>
+                  <li>Mempelajari Instalasi & Trouble Shooting</li>
+                  <li>Mempelajari IOT</li>
+                </ul>
+                <a href="#basic" class="card__cta cta">Daftar</a>
+              </div>
+      
+              <div class="cards__card card">
+                <h2 class="card__heading">Kelas Desain</h2>
+                <p class="card__price">1.000.000</p>
+                <ul role="list" class="card__bullets flow">
+                  <li>Program 1 tahun</li>
+                  <li>Mempelajari Desain Grafis (Corel Draw, Photoshop, Ilustrator)</li>
+                  <li>Mempelajari Multimedia <br> (3D + Video Editing)</li>
+                  <li>Mempelajari Web/UI/UX Design</li>
+                </ul>
+                <a href="#pro" class="card__cta cta">Daftar</a>
+              </div>
+      
+              <div class="cards__card card">
+                <h2 class="card__heading">Kelas Programmer</h2>
+                <p class="card__price">1.000.000</p>
+                <ul role="list" class="card__bullets flow">
+                  <li>Program 1 tahun</li>
+                  <li>Mempelajari HTML CSS Javascript, PHP</li>
+                  <li>Mempelajari Framework css, JS, PHP</li>
+                  <li>Membuat website</li>
+                  <li>Membuat aplikasi berbasis web</li>
+                </ul>
+                <a href="#ultimate" class="card__cta cta">Daftar</a>
+              </div>
+            </div>
+      
+            <div class="overlay cards__inner"></div>
+          </div>
+        </main>
+
+        <hr class="featurette-divider" />
+        <h1 class="main__heading" id="scrollspyHeading4">Program Internasional</h1>
+        <!-- partial start -->
+        <div class="container-partial">
+          <div class="card-partial">
+              <div class="circle">
+                  <h2>Basic</h2>
+              </div>
+              <div class="content">
+                  <p>
+                    <ul role="list" class="card__bullets flow" >
+                      <li>Adab</li>
+                      <li>Aqidah, Fiqih, Dll</li>
+                      <li>Budaya</li>
+                    </ul>
+                  </p>
+              </div>
+          </div>
+          <div class="card-partial">
+              <div class="circle">
+                  <h2>Bahasa</h2>
+              </div>
+              <div class="content">
+                  <p>
+                    <ul role="list" class="card__bullets flow" >
+                      <li>A1</li>
+                      <li>A2</li>
+                      <li>B1</li>
+                      <li>B2</li>
+                    </ul>
+                  </p>
+              </div>
+          </div>
+          <div class="card-partial">
+              <div class="circle">
+                  <h2>Berkas</h2>
+              </div>
+              <div class="content">
+                  <p>
+                    <ul role="list" class="card__bullets flow">
+                      <li>Paspor</li>
+                      <li>Sertifikat Bahasa</li>
+                      <li>Pemetaan Tempat Study & Kerja</li>
+                      <li>VISA</li>
+                    </ul>
+                  </p>
+              </div>
+          </div>
+        </div>
+        <!-- partial end -->
         
-        <div class="row">
-          <h2 class="text-center ms-2">PROGRAM NASIONAL</h2>
-          <div class="container px-4 col-4 bg-dark text-white border border-primary">
-            <svg
-              class="bd-placeholder-img rounded-circle"
-              width="140"
-              height="140"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Placeholder"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false">
-              <title>Program Nasional</title>
-              <rect
-                width="100%"
-                height="100%"
-                fill="var(--bs-secondary-color)"
-              />
-            </svg>
-            <h2 class="fw-normal">Skill Dasar</h2>
-            <p>
-              1. Mempelajari Adab & Ilmu Fardhu Ain (Aqidah, Fikih, dll) <br />
-              2. Mempelajari Tehnik Komputer & Jaringan <br />
-              3. Mempelajari Instalasi & Trouble Shooting <br />
-              4. Mempelajari IOT <br />
-            </p>
-            <p>
-              <a class="btn btn-secondary" href="#">View details &raquo;</a>
-            </p>
+        <hr class="featurette-divider" />
+        <h4 class="main__heading" id="scrollspyHeading5">PERSYARATAN</h4>
+        <div class="row g-4 mt-3">
+          <div class="col-lg-6">
+            <div class="gradient-border-card">
+                <div class="icon mb-3">
+                    <svg aria-labelledby="routes-icon-title" fill="none" height="30" role="img" viewBox="0 0 30 30" width="30" xmlns="http://www.w3.org/2000/svg">
+                        <title id="routes-icon-title">An icon of a globe</title>
+                        <defs>
+                            <linearGradient gradientUnits="userSpaceOnUse" id="icon-gradient-fill" x1="4" x2="40" y1="4" y2="24">
+                                <stop stop-color="white" stop-opacity="0.2"></stop>
+                                <stop offset="0" stop-color="white" stop-opacity="0.4"></stop>
+                                <stop offset="0.5" stop-color="white"></stop>
+                                <stop offset="0.75" stop-color="white" stop-opacity="0.4"></stop>
+                                <stop offset="1" stop-color="white" stop-opacity="0"></stop>
+                            </linearGradient>
+                        </defs>
+                        <path d="M15 26.25C17.4937 26.2499 19.9168 25.4215 21.8888 23.895C23.8607 22.3685 25.2699 20.2304 25.895 17.8163M15 26.25C12.5063 26.2499 10.0832 25.4215 8.11121 23.895C6.13925 22.3685 4.73009 20.2304 4.105 17.8163M15 26.25C18.1062 26.25 20.625 21.2125 20.625 15C20.625 8.7875 18.1062 3.75 15 3.75M15 26.25C11.8937 26.25 9.375 21.2125 9.375 15C9.375 8.7875 11.8937 3.75 15 3.75M15 3.75C16.9953 3.74917 18.9549 4.2792 20.6777 5.28571C22.4006 6.29221 23.8246 7.73896 24.8037 9.4775M15 3.75C13.0047 3.74917 11.0451 4.2792 9.32226 5.28571C7.59942 6.29221 6.17538 7.73896 5.19625 9.4775M24.8037 9.4775C22.0821 11.8349 18.6007 13.1302 15 13.125C11.2525 13.125 7.825 11.75 5.19625 9.4775M24.8037 9.4775C25.7548 11.1625 26.2531 13.0651 26.25 15C26.25 15.9725 26.1262 16.9163 25.895 17.8163M25.895 17.8163C22.5615 19.6642 18.8115 20.631 15 20.625C11.0475 20.625 7.33375 19.6063 4.105 17.8163M4.105 17.8163C3.86843 16.8962 3.74915 15.95 3.75 15C3.75 12.9938 4.275 11.1088 5.19625 9.4775" stroke="url(#icon-gradient-fill)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                    </svg>
+                </div>
+                <h2 style="font-size:1.8rem !important" class="gradient-text-animation">Syarat Utama</h2>
+                <p class="mt-3">
+                  <ul role="list" class="card__bullets flow">
+                    <li>Usia minimal 17 tahun (lulus SMA/SMK/’Aliyah)</li>
+                    <li>Mendapat restu orang tua</li>
+                    <li>Attitude baik dan tidak pernah terlibat dalam tindakan kriminal dan tindakan negatif lainnya</li>
+                    <li>Siap tinggal di asrama</li>
+                    <li>Sehat jasmani dan ruhani</li>
+                    <li>Memiliki hafalan qur’an diutamakan</li>
+                    <li>Siap mengikuti tes Biometrik, DISC & Kemampuan Dasar</li>
+                    <li>Siap mengikuti segala bentuk disiplin dan aturan yang telah ditetapkan.</li>
+                  </ul>
+                </p>
+                <div class="shimmer" style="--delay: -6s"></div>
+                <i aria-hidden="true"></i>
+                <div class="glowing-wrapper glowing-wrapper-active mt-3">
+                    <div class="glowing-wrapper-animations">
+                        <div class="glowing-wrapper-glow"></div>
+                        <div class="glowing-wrapper-mask-wrapper">
+                            <div class="glowing-wrapper-mask"></div>
+                        </div>
+                    </div>
+                    <div class="glowing-wrapper-borders-masker">
+                        <div class="glowing-wrapper-borders"></div>
+                    </div>
+                </div>
+            </div>
           </div>
-          <!-- /.col-lg-4 -->
-          <div class="container px-4 col-4 bg-dark text-white border border-primary">
-            <svg
-              class="bd-placeholder-img rounded-circle"
-              width="140"
-              height="140"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Placeholder"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <title>Placeholder</title>
-              <rect
-                width="100%"
-                height="100%"
-                fill="var(--bs-secondary-color)"
-              />
-            </svg>
-            <h2 class="fw-normal">Kelas Desain</h2>
-            <p>
-              1. Program 1 tahun <br />
-              2. Mempelajari Desain Grafis <br> (Corel Draw, Photoshop, Ilustrator)
-              <br />
-              3. Mempelajari Multimedia <br> (3D + Video Editing) <br />
-              4. Mempelajari Web/UI/UX Design <br />
-            </p>
-            <p>
-              <a class="btn btn-secondary" href="#">View details &raquo;</a>
-            </p>
+          <div class="col-lg-6">
+            <div class="gradient-border-card">
+                <div class="icon mb-3">
+                    <svg aria-labelledby="routes-icon-title" fill="none" height="30" role="img" viewBox="0 0 30 30" width="30" xmlns="http://www.w3.org/2000/svg">
+                        <title id="routes-icon-title">An icon of a globe</title>
+                        <defs>
+                            <linearGradient gradientUnits="userSpaceOnUse" id="icon-gradient-fill" x1="4" x2="40" y1="4" y2="24">
+                                <stop stop-color="white" stop-opacity="0.2"></stop>
+                                <stop offset="0" stop-color="white" stop-opacity="0.4"></stop>
+                                <stop offset="0.5" stop-color="white"></stop>
+                                <stop offset="0.75" stop-color="white" stop-opacity="0.4"></stop>
+                                <stop offset="1" stop-color="white" stop-opacity="0"></stop>
+                            </linearGradient>
+                        </defs>
+                        <path d="M15 26.25C17.4937 26.2499 19.9168 25.4215 21.8888 23.895C23.8607 22.3685 25.2699 20.2304 25.895 17.8163M15 26.25C12.5063 26.2499 10.0832 25.4215 8.11121 23.895C6.13925 22.3685 4.73009 20.2304 4.105 17.8163M15 26.25C18.1062 26.25 20.625 21.2125 20.625 15C20.625 8.7875 18.1062 3.75 15 3.75M15 26.25C11.8937 26.25 9.375 21.2125 9.375 15C9.375 8.7875 11.8937 3.75 15 3.75M15 3.75C16.9953 3.74917 18.9549 4.2792 20.6777 5.28571C22.4006 6.29221 23.8246 7.73896 24.8037 9.4775M15 3.75C13.0047 3.74917 11.0451 4.2792 9.32226 5.28571C7.59942 6.29221 6.17538 7.73896 5.19625 9.4775M24.8037 9.4775C22.0821 11.8349 18.6007 13.1302 15 13.125C11.2525 13.125 7.825 11.75 5.19625 9.4775M24.8037 9.4775C25.7548 11.1625 26.2531 13.0651 26.25 15C26.25 15.9725 26.1262 16.9163 25.895 17.8163M25.895 17.8163C22.5615 19.6642 18.8115 20.631 15 20.625C11.0475 20.625 7.33375 19.6063 4.105 17.8163M4.105 17.8163C3.86843 16.8962 3.74915 15.95 3.75 15C3.75 12.9938 4.275 11.1088 5.19625 9.4775" stroke="url(#icon-gradient-fill)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                    </svg>
+                </div>
+                <h2 style="font-size:1.8rem !important" class="gradient-text-animation">Syarat Administrasi</h2>
+                <p class="mt-3">
+                  <ul role="list" class="card__bullets flow">
+                    <li>Foto Ijazah Terakhir (Pastikan foto jernih & jelas)</li>
+                    <li>Foto Akte (Pastikan foto jernih & jelas)</li>
+                    <li>Foto KK (Pastikan foto jernih & jelas)</li>
+                    <li>Foto KTP Pendaftar (Jika belum ada boleh menggunakan Kartu Pelajar atau identitas lain)</li>
+                    <li>Foto KTP Bapak atau Ibu</li>
+                    <li>Foto pribadi setengah badan (80% wajah Background warna biru, menggunakan baju/koko putih)</li>
+                    <li>Foto Bukti transfer biaya pendaftaran</li>
+                    <li>Melampirkan berkas asli (Ijazah Terakhir, Akte & KTP) untuk program beasiswa</li>
+                  </ul>
+                </p>
+                <div class="shimmer" style="--delay: -6s"></div>
+                <i aria-hidden="true"></i>
+                <div class="glowing-wrapper glowing-wrapper-active mt-3">
+                    <div class="glowing-wrapper-animations">
+                        <div class="glowing-wrapper-glow"></div>
+                        <div class="glowing-wrapper-mask-wrapper">
+                            <div class="glowing-wrapper-mask"></div>
+                        </div>
+                    </div>
+                    <div class="glowing-wrapper-borders-masker">
+                        <div class="glowing-wrapper-borders"></div>
+                    </div>
+                </div>
+            </div>
           </div>
-          <!-- /.col-lg-4 -->
-          <div class="container px-4 col-4 bg-dark text-white border border-primary">
-            <svg
-              class="bd-placeholder-img rounded-circle"
-              width="140"
-              height="140"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Placeholder"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <title>Placeholder</title>
-              <rect
-                width="100%"
-                height="100%"
-                fill="var(--bs-secondary-color)"
-              />
-            </svg>
-            <h2 class="fw-normal">Kelas Programmer</h2>
-            <p>
-              1. Program 1 tahun <br>
-              2. Mempelajari HTML, CSS, Javascript <br>
-              3. Mempelajari PHP & LARAVEL <br>
-              4. Membuat website <br>
-              5. Dll <br>
-            </p>
-            <p>
-              <a class="btn btn-secondary" href="#">View details &raquo;</a>
-            </p>
-          </div>
-          <!-- /.col-lg-4 -->
         </div>
         
-
-        <h4 id="scrollspyHeading4"></h4>
+        <h4 id="scrollspyHeading6"></h4>
         <hr class="featurette-divider" />
-
-        <div class="row featurette">
-          <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading fw-normal lh-1">
-              Oh yeah, it’s that good.
-              <span class="text-body-secondary">See for yourself.</span>
-            </h2>
-            <p class="lead">
-              Another featurette? Of course. More placeholder content here to
-              give you an idea of how this layout would work with some actual
-              real-world content in place.
-            </p>
-          </div>
-          <div class="col-md-5 order-md-1">
-            <svg
-              class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-              width="500"
-              height="500"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Placeholder: 500x500"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="var(--bs-secondary-bg)" />
-              <text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">
-                500x500
-              </text>
-            </svg>
-          </div>
-        </div>
-
-        <h4 id="scrollspyHeading5"></h4>
-        <hr class="featurette-divider" />
-
-        <div class="row featurette">
-          <div class="col-md-7">
-            <h2 class="featurette-heading fw-normal lh-1">
-              And lastly, this one.
-              <span class="text-body-secondary">Checkmate.</span>
-            </h2>
-            <p class="lead">
-              And yes, this is the last block of representative placeholder
-              content. Again, not really intended to be actually read, simply
-              here to give you a better view of what this would look like with
-              some actual content. Your content.
-            </p>
-          </div>
-          <div class="col-md-5">
-            <svg
-              class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-              width="500"
-              height="500"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Placeholder: 500x500"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="var(--bs-secondary-bg)" />
-              <text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">
-                500x500
-              </text>
-            </svg>
-          </div>
-        </div>
-
-        <hr class="featurette-divider" />
-
+        
         <%= yield %>
-
+        
         <h3>Silahkan Login</h3>
         <% if user_signed_in? %>
           <%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete } %>
           <%= link_to "Edit registration", edit_user_registration_path %>
-        <% elsif !admin_signed_in? %>
+        <% elsif !admin_signed_in? %>,
           <%= link_to "Sign up", new_user_registration_path %>
           <%= link_to "Sign in", new_user_session_path %>
         <% end %>
         <% if admin_signed_in? %>
-          <h3>Login Admin</h3>
+        <h3>Login Admin</h3>
           <%= link_to "Sign out", destroy_admin_session_path, method: :delete, data: { turbo_method: :delete } %>
           <%= link_to "Edit registration", edit_admin_registration_path %>
         <% elsif !user_signed_in? %>
-          <h3>Login Admin</h3>
+        <h3>Login Admin</h3>
           <%= link_to "Sign up", new_admin_registration_path %>
           <%= link_to "Sign in", new_admin_session_path %>
           <% end %>
           
-          <h3>Page Links</h3>
+        <h3>Page Links</h3>
           <%= link_to "Users path", pages_users_path %>
           <%= link_to "Admin path", pages_admin_path %>
 
@@ -757,7 +1844,16 @@
       <!-- /.container -->
 
       <!-- FOOTER -->
+      <!-- <div class="container-footer">
+        <a href="https://www.facebook.com/idbc.official"><i class="fa fa-facebook-square" id="facebook"></i><a>
+        <a href="https://wa.me/6281931666665"><i class="fa fa-whatsapp" id="whatsapp"></i></a>
+        <a href="https://www.youtube.com/channel/UCPGbm-2UzCFDTr7FHY9pGZA"><i class="fa fa-youtube-play" id="youtube"></i></a>
+        <a href="https://www.instagram.com/idbc_official/"><i class="fa fa-instagram" id="instagram"></i><a>
+      </div> -->
       <footer class="container">
+        <button>
+          <span class="button-inner">Join today!</span>
+        </button>
         <button type="button" class="btn btn-info float-end"><a href="#">Kembali Ke Atas</a></button>
         <p>
           &copy; 2024 GhoziTech, Inc. &middot;
@@ -770,5 +1866,70 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script>
+      console.clear();
+      const cardsContainer = document.querySelector(".cards");
+      const cardsContainerInner = document.querySelector(".cards__inner");
+      const cards = Array.from(document.querySelectorAll(".card"));
+      const overlay = document.querySelector(".overlay");
+
+      const applyOverlayMask = (e) => {
+        const overlayEl = e.currentTarget;
+        const x = e.pageX - cardsContainer.offsetLeft;
+        const y = e.pageY - cardsContainer.offsetTop;
+
+        overlayEl.style = `--opacity: 1; --x: ${x}px; --y:${y}px;`;
+      };
+
+      const createOverlayCta = (overlayCard, ctaEl) => {
+        const overlayCta = document.createElement("div");
+        overlayCta.classList.add("cta");
+        overlayCta.textContent = ctaEl.textContent;
+        overlayCta.setAttribute("aria-hidden", true);
+        overlayCard.append(overlayCta);
+      };
+
+      const observer = new ResizeObserver((entries) => {
+        entries.forEach((entry) => {
+          const cardIndex = cards.indexOf(entry.target);
+          let width = entry.borderBoxSize[0].inlineSize;
+          let height = entry.borderBoxSize[0].blockSize;
+
+          if (cardIndex >= 0) {
+            overlay.children[cardIndex].style.width = `${width}px`;
+            overlay.children[cardIndex].style.height = `${height}px`;
+          }
+        });
+      });
+
+      const initOverlayCard = (cardEl) => {
+        const overlayCard = document.createElement("div");
+        overlayCard.classList.add("card");
+        createOverlayCta(overlayCard, cardEl.lastElementChild);
+        overlay.append(overlayCard);
+        observer.observe(cardEl);
+      };
+
+      cards.forEach(initOverlayCard);
+      document.body.addEventListener("pointermove", applyOverlayMask);
+
+      // IDBC Menyenangkan
+      const wrapper = document.querySelector('.wrapper');
+      const question = document.querySelector('.question');
+      const yesBtn = document.querySelector('.yes-btn'); 
+      const noBtn = document.querySelector('.no-btn');
+      const wrapperRect = wrapper.getBoundingClientRect(); 
+      const noBtnRect = noBtn.getBoundingClientRect();
+      yesBtn.addEventListener('click', () => {
+        question.innerHTML = 'Terima Kasih Tanggapannya';
+      });
+      noBtn.addEventListener('mouseover', () => {
+        const i = Math.floor(Math.random() * (wrapperRect.width - noBtnRect.width)) + 1;
+        const j = Math.floor(Math.random() *
+        (wrapperRect.height - noBtnRect.height)) + 1;
+        noBtn.style.left = i + 'px';
+        noBtn.style.top =j+'px';
+      });
+    </script>
   </body>
 </html>

@@ -14,3 +14,16 @@
  *= require_self
  *= require carousel
  */
+
+body {
+  display: grid;
+  place-items: center;
+  font-family: "League Spartan", system-ui, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.2;
+  color: #ddd;
+}
+
+ul {
+  list-style: none;
+}
