@@ -1,7 +1,5 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Data Calon Mahasiswa</h1>
-
 <div id="daftars">
   <% @daftars.each do |daftar| %>
     <%= render daftar %>
@@ -11,4 +9,4 @@
   <% end %>
 </div>
 
-<%= link_to "New daftar", new_daftar_path %>
+<%= link_to "Daftar Sekarang", new_daftar_path, class: "btn btn-primary" %>

@@ -69,3 +69,4 @@ end
 gem "devise", "~> 4.9"
 
 gem "cssbundling-rails"
+gem "sassc-rails", "~> 2.1"

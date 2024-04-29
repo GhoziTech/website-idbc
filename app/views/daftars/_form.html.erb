@@ -1,14 +1,25 @@
 <style>
   body {
-    background-color: lightblue;
+    background-color: #fff;
   }
-  .container {
-    color: aliceblue;
+  section {
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
   }
+  h3 {
+    text-align: center;
+    color: green;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
 </style>
-<div class="col-md-7 col-lg-8">
+<div class="col-10">
   <%= form_with(model: daftar) do |form| %>
-  <div class="row g-3">
+  <div>
     <% if daftar.errors.any? %>
     <div style="color: red">
       <h2>
@@ -24,254 +35,257 @@
     </div>
     <% end %>
 
-    <div class="container border border-primary justify-center bg-secondary m-2 p-2">
-      <section id="pribadi">
-        <h3>Data Calon Mahasantri</h3>
-        <div class="col-12">
-          <%= form.label :ketentuan, style: "display: block", class: "form-label" %>
-          <%= form.text_field :ketentuan, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :setuju, style: "display: block", class: "form-label"%> <%=
-          form.check_box :setuju %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :nomor, style: "display: block", class: "form-label"%> <%=
-          form.number_field :nomor, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :nama_lengkap, style: "display: block", class: "form-label"
-          %> <%= form.text_field :nama_lengkap, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :nik_siswa, style: "display: block", class: "form-label" %>
-          <%= form.text_field :nik_siswa, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :jurusan, style: "display: block", class: "form-label" %>
-          <%= form.text_field :jurusan, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :jenis_kelamin, style: "display: block", class: "form-label" %> 
-          <%= form.text_field :jenis_kelamin, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :tempat_lahir, style: "display: block", class: "form-label"
-          %> <%= form.text_field :tempat_lahir, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :tanggal_lahir, style: "display: block", class: "form-label" %> 
-          <%= form.date_field :tanggal_lahir, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :agama, style: "display: block", class: "form-label"%> 
-          <%= form.text_field :agama, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :status_keluarga, style: "display: block", class: "form-label"%> 
-          <%= form.text_field :status_keluarga, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :anak_ke, style: "display: block", class: "form-label"%>
-          <%= form.number_field :anak_ke, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :jumlah_saudara, style: "display: block", class: "form-label"%> 
-          <%= form.number_field :jumlah_saudara, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :hobi, style: "display: block", class: "form-label"%> 
-          <%= form.text_field :hobi, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :cita_cita, style: "display: block", class: "form-label"%>
-          <%= form.text_field :cita_cita, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :sd, style: "display: block", class: "form-label"%> 
-          <%= form.text_field :sd, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :no_hp, style: "display: block", class: "form-label"%> 
-          <%= form.text_field :no_hp, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :tempat_tinggal, style: "display: block", class: "form-label"%> 
-          <%= form.text_field :tempat_tinggal, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :alamat, style: "display: block", class: "form-label"%> 
-          <%= form.text_field :alamat, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :desa, style: "display: block", class: "form-label"%> 
-          <%= form.text_field :desa, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :kecamatan, style: "display: block", class: "form-label"%>
-          <%= form.text_field :kecamatan, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :kabupaten, style: "display: block", class: "form-label"%>
-          <%= form.text_field :kabupaten, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :provinsi, style: "display: block", class: "form-label"%>
-          <%= form.text_field :provinsi, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :kode_pos, style: "display: block", class: "form-label"%>
-          <%= form.number_field :kode_pos, class: "form-control" %>
-        </div>
-      </section>
+    <section class="m-2 p-4">
+      <div>
+        <section id="pribadi">
+          <h3>Data Calon Mahasantri</h3>
+          <div class="col-12">
+            <%= form.label :ketentuan, style: "display: block", class: "form-label" %>
+            <%= form.text_field :ketentuan, class: "form-control" %>
+          </div>
       
-    </div>
-    
-    <div class="container border border-primary justify-center bg-secondary m-2 p-2">
-      <section id="ayah">
-        <h3>Data Ayah</h3>
-
-        <div class="col-12">
-          <%= form.label :nomor_kk, style: "display: block", class: "form-label"%>
-          <%= form.text_field :nomor_kk, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :nama_ayah, style: "display: block", class: "form-label"%>
-          <%= form.text_field :nama_ayah, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :tahun_lahir_ayah, style: "display: block", class: "form-label"%>
-          <%= form.date_field :tahun_lahir_ayah, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :status_ayah, style: "display: block", class:"form-label"%> 
-          <%= form.text_field :status_ayah, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :pekerjaan_ayah, style: "display: block", class: "form-label"%> 
-          <%= form.text_field :pekerjaan_ayah, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :penghasilan_ayah, style: "display: block", class: "form-label"%> 
-          <%= form.text_field :penghasilan_ayah, class: "form-control" %>
-        </div>
-      </section>
-    </div>
-    
-    <div class="container border border-primary justify-center bg-secondary m-2 p-2">
-      <section id="ibu">
-        <h3>Data Ibu</h3>
-
-        <div class="col-12">
-          <%= form.label :nama_ibu, style: "display: block", class: "form-label"%>
-          <%= form.text_field :nama_ibu, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :tahun_lahir_ibu, style: "display: block", class: "form-label"%> 
-          <%= form.date_field :tahun_lahir_ibu, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :status_ibu, style: "display: block", class: "form-label"%>
-          <%= form.text_field :status_ibu, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :pekerjaan_ibu, style: "display: block", class: "form-label"%> 
-          <%= form.text_field :pekerjaan_ibu, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :penghasilan_ibu, style: "display: block", class: "form-label"%> 
-          <%= form.text_field :penghasilan_ibu, class: "form-control" %>
-        </div>
-      </section>
-    </div>
-
-    <div class="container border border-primary justify-center bg-secondary m-2 p-2">
-      <section id="wali">
-        <h3>Data Wali</h3>
-
-        <div class="col-12">
-          <%= form.label :nama_wali, style: "display: block", class: "form-label"%>
-          <%= form.text_field :nama_wali, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :tahun_lahir_wali, style: "display: block", class: "form-label"%> 
-          <%= form.date_field :tahun_lahir_wali, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :pekerjaan_wali, style: "display: block", class: "form-label"%> 
-          <%= form.text_field :pekerjaan_wali, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :penghasilan_wali, style: "display: block", class: "form-label"%> 
-          <%= form.text_field :penghasilan_wali, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :no_hp_ortu, style: "display: block", class: "form-label"%>
-          <%= form.text_field :no_hp_ortu, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :nama_sekolah, style: "display: block", class: "form-label"%> 
-          <%= form.text_field :nama_sekolah, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :jenjang_sekolah, style: "display: block", class: "form-label"%> 
-          <%= form.text_field :jenjang_sekolah, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :status_sekolah, style: "display: block", class: "form-label"%> 
-          <%= form.text_field :status_sekolah, class: "form-control" %>
-        </div>
-    
-        <div class="col-12">
-          <%= form.label :lokasi_sekolah, style: "display: block", class: "form-label"%> 
-          <%= form.text_field :lokasi_sekolah, class: "form-control" %>
-        </div>
-      </section>
-    </div>
+          <div class="col-12">
+            <%= form.label :setuju, style: "display: block", class: "form-label"%> <%=
+            form.check_box :setuju %>
+          </div>
       
-    <div class="col-12">
-      <%= form.label :konfirmasi, style: "display: block", class: "form-label"%>
-      <%= form.check_box :konfirmasi %>
-    </div>
+          <div class="col-12">
+            <%= form.label :nomor, style: "display: block", class: "form-label"%> <%=
+            form.number_field :nomor, class: "form-control" %>
+          </div>
+      
+          <div class="col-12">
+            <%= form.label :nama_lengkap, style: "display: block", class: "form-label"
+            %> <%= form.text_field :nama_lengkap, class: "form-control" %>
+          </div>
+      
+          <div class="col-12">
+            <%= form.label :nik_siswa, style: "display: block", class: "form-label" %>
+            <%= form.text_field :nik_siswa, class: "form-control" %>
+          </div>
+      
+          <div class="col-12">
+            <%= form.label :jurusan, style: "display: block", class: "form-label" %>
+            <%= form.text_field :jurusan, class: "form-control" %>
+          </div>
+      
+          <div class="col-12">
+            <%= form.label :jenis_kelamin, style: "display: block", class: "form-label" %> 
+            <%= form.text_field :jenis_kelamin, class: "form-control" %>
+          </div>
+      
+          <div class="col-12">
+            <%= form.label :tempat_lahir, style: "display: block", class: "form-label"
+            %> <%= form.text_field :tempat_lahir, class: "form-control" %>
+          </div>
+      
+          <div class="col-12">
+            <%= form.label :tanggal_lahir, style: "display: block", class: "form-label" %> 
+            <%= form.date_field :tanggal_lahir, class: "form-control" %>
+          </div>
+      
+          <div class="col-12">
+            <%= form.label :agama, style: "display: block", class: "form-label"%> 
+            <%= form.text_field :agama, class: "form-control" %>
+          </div>
+      
+          <div class="col-12">
+            <%= form.label :status_keluarga, style: "display: block", class: "form-label"%> 
+            <%= form.text_field :status_keluarga, class: "form-control" %>
+          </div>
+      
+          <div class="col-12">
+            <%= form.label :anak_ke, style: "display: block", class: "form-label"%>
+            <%= form.number_field :anak_ke, class: "form-control" %>
+          </div>
+      
+          <div class="col-12">
+            <%= form.label :jumlah_saudara, style: "display: block", class: "form-label"%> 
+            <%= form.number_field :jumlah_saudara, class: "form-control" %>
+          </div>
+      
+          <div class="col-12">
+            <%= form.label :hobi, style: "display: block", class: "form-label"%> 
+            <%= form.text_field :hobi, class: "form-control" %>
+          </div>
+      
+          <div class="col-12">
+            <%= form.label :cita_cita, style: "display: block", class: "form-label"%>
+            <%= form.text_field :cita_cita, class: "form-control" %>
+          </div>
+      
+          <div class="col-12">
+            <%= form.label :sd, style: "display: block", class: "form-label"%> 
+            <%= form.text_field :sd, class: "form-control" %>
+          </div>
+      
+          <div class="col-12">
+            <%= form.label :no_hp, style: "display: block", class: "form-label"%> 
+            <%= form.text_field :no_hp, class: "form-control" %>
+          </div>
+      
+          <div class="col-12">
+            <%= form.label :tempat_tinggal, style: "display: block", class: "form-label"%> 
+            <%= form.text_field :tempat_tinggal, class: "form-control" %>
+          </div>
+      
+          <div class="col-12">
+            <%= form.label :alamat, style: "display: block", class: "form-label"%> 
+            <%= form.text_field :alamat, class: "form-control" %>
+          </div>
+      
+          <div class="col-12">
+            <%= form.label :desa, style: "display: block", class: "form-label"%> 
+            <%= form.text_field :desa, class: "form-control" %>
+          </div>
+      
+          <div class="col-12">
+            <%= form.label :kecamatan, style: "display: block", class: "form-label"%>
+            <%= form.text_field :kecamatan, class: "form-control" %>
+          </div>
+      
+          <div class="col-12">
+            <%= form.label :kabupaten, style: "display: block", class: "form-label"%>
+            <%= form.text_field :kabupaten, class: "form-control" %>
+          </div>
+      
+          <div class="col-12">
+            <%= form.label :provinsi, style: "display: block", class: "form-label"%>
+            <%= form.text_field :provinsi, class: "form-control" %>
+          </div>
+      
+          <div class="col-12">
+            <%= form.label :kode_pos, style: "display: block", class: "form-label"%>
+            <%= form.number_field :kode_pos, class: "form-control" %>
+          </div>
+        </section>
+        
+      </div>
+      
+      <div class=" m-2 p-2">
+        <section id="ayah">
+          <h3>Data Ayah</h3>
+  
+          <div class="col-12">
+            <%= form.label :nomor_kk, style: "display: block", class: "form-label"%>
+            <%= form.text_field :nomor_kk, class: "form-control" %>
+          </div>
+      
+          <div class="col-12">
+            <%= form.label :nama_ayah, style: "display: block", class: "form-label"%>
+            <%= form.text_field :nama_ayah, class: "form-control" %>
+          </div>
+      
+          <div class="col-12">
+            <%= form.label :tahun_lahir_ayah, style: "display: block", class: "form-label"%>
+            <%= form.date_field :tahun_lahir_ayah, class: "form-control" %>
+          </div>
+      
+          <div class="col-12">
+            <%= form.label :status_ayah, style: "display: block", class:"form-label"%> 
+            <%= form.text_field :status_ayah, class: "form-control" %>
+          </div>
+      
+          <div class="col-12">
+            <%= form.label :pekerjaan_ayah, style: "display: block", class: "form-label"%> 
+            <%= form.text_field :pekerjaan_ayah, class: "form-control" %>
+          </div>
+      
+          <div class="col-12">
+            <%= form.label :penghasilan_ayah, style: "display: block", class: "form-label"%> 
+            <%= form.text_field :penghasilan_ayah, class: "form-control" %>
+          </div>
+        </section>
+      </div>
+      
+      <div class=" m-2 p-2">
+        <section id="ibu">
+          <h3>Data Ibu</h3>
+  
+          <div class="col-12">
+            <%= form.label :nama_ibu, style: "display: block", class: "form-label"%>
+            <%= form.text_field :nama_ibu, class: "form-control" %>
+          </div>
+      
+          <div class="col-12">
+            <%= form.label :tahun_lahir_ibu, style: "display: block", class: "form-label"%> 
+            <%= form.date_field :tahun_lahir_ibu, class: "form-control" %>
+          </div>
+      
+          <div class="col-12">
+            <%= form.label :status_ibu, style: "display: block", class: "form-label"%>
+            <%= form.text_field :status_ibu, class: "form-control" %>
+          </div>
+      
+          <div class="col-12">
+            <%= form.label :pekerjaan_ibu, style: "display: block", class: "form-label"%> 
+            <%= form.text_field :pekerjaan_ibu, class: "form-control" %>
+          </div>
+      
+          <div class="col-12">
+            <%= form.label :penghasilan_ibu, style: "display: block", class: "form-label"%> 
+            <%= form.text_field :penghasilan_ibu, class: "form-control" %>
+          </div>
+        </section>
+      </div>
+  
+      <div class=" m-2 p-2">
+        <section id="wali">
+          <h3>Data Wali</h3>
+  
+          <div class="col-12">
+            <%= form.label :nama_wali, style: "display: block", class: "form-label"%>
+            <%= form.text_field :nama_wali, class: "form-control" %>
+          </div>
+      
+          <div class="col-12">
+            <%= form.label :tahun_lahir_wali, style: "display: block", class: "form-label"%> 
+            <%= form.date_field :tahun_lahir_wali, class: "form-control" %>
+          </div>
+      
+          <div class="col-12">
+            <%= form.label :pekerjaan_wali, style: "display: block", class: "form-label"%> 
+            <%= form.text_field :pekerjaan_wali, class: "form-control" %>
+          </div>
+      
+          <div class="col-12">
+            <%= form.label :penghasilan_wali, style: "display: block", class: "form-label"%> 
+            <%= form.text_field :penghasilan_wali, class: "form-control" %>
+          </div>
+      
+          <div class="col-12">
+            <%= form.label :no_hp_ortu, style: "display: block", class: "form-label"%>
+            <%= form.text_field :no_hp_ortu, class: "form-control" %>
+          </div>
+      
+          <div class="col-12">
+            <%= form.label :nama_sekolah, style: "display: block", class: "form-label"%> 
+            <%= form.text_field :nama_sekolah, class: "form-control" %>
+          </div>
+      
+          <div class="col-12">
+            <%= form.label :jenjang_sekolah, style: "display: block", class: "form-label"%> 
+            <%= form.text_field :jenjang_sekolah, class: "form-control" %>
+          </div>
+      
+          <div class="col-12">
+            <%= form.label :status_sekolah, style: "display: block", class: "form-label"%> 
+            <%= form.text_field :status_sekolah, class: "form-control" %>
+          </div>
+      
+          <div class="col-12">
+            <%= form.label :lokasi_sekolah, style: "display: block", class: "form-label"%> 
+            <%= form.text_field :lokasi_sekolah, class: "form-control" %>
+          </div>
+        </section>
+      </div>
+        
+      <div class="col-12">
+        <%= form.label :konfirmasi, style: "display: block", class: "form-label"%>
+        <%= form.check_box :konfirmasi %>
+      </div>
+    </section>
+    
   </div>
 
   <hr class="my-4" />
